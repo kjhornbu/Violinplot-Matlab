@@ -156,7 +156,7 @@ elseif isnumeric(data) % numeric input
             cats = categorical(cats, grouporder);
         end
         
-        catnames = (unique(cats)); % this ignores categories without any data
+        catnames = (unique(cats,'stable')); % this ignores categories without any data %Keeping stable because we have orders we care about and I'm not writing them all out.
         catnames_labels = {};
         for n = 1:length(catnames)
             thisCat = catnames(n);
